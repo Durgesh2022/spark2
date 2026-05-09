@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --no-install next build)",
+      "Bash(npm run *)"
+    ]
+  }
+}
