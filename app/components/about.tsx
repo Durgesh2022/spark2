@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const CircularLogoAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -124,14 +124,14 @@ const CircularLogoAnimation = () => {
       drawCircle(centerX, centerY, 320, '#355E3B', true);
 
       // Draw center logo
-      drawLogo(centerX, centerY, 'WFC', '#F7931E', 90, logoUrls.center);
+      drawLogo(centerX, centerY, 'WFC', '#F7931E', 110, logoUrls.center);
 
       // Draw inner circle logos (rotating clockwise)
       rotation1 += 0.005;
       const innerRadius = 200;
       const innerX = centerX + Math.cos(rotation1) * innerRadius;
       const innerY = centerY + Math.sin(rotation1) * innerRadius;
-      drawLogo(innerX, innerY, 'WFC GAF', '#FF6B35', 60, logoUrls.inner);
+      drawLogo(innerX, innerY, 'WFC GAF', '#FF6B35', 105, logoUrls.inner);
 
       // Draw middle circle with counter-clockwise rotation
       rotation2 -= 0.003;
@@ -142,7 +142,7 @@ const CircularLogoAnimation = () => {
         const angle = logo.angle + rotation2;
         const x = centerX + Math.cos(angle) * outerRadius;
         const y = centerY + Math.sin(angle) * outerRadius;
-        drawLogo(x, y, logo.name, logo.color, 65, logoUrls[logo.name]);
+        drawLogo(x, y, logo.name, logo.color, 100, logoUrls[logo.name]);
       });
 
       animationRef.current = requestAnimationFrame(animate);
